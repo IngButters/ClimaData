@@ -21,9 +21,7 @@ CODIGO,nombre,CAtaGORIA,altitud,latitud,longitud,MUNICIPIO,SUBZONA_HI
 21130180,ALTAMIRA DC HACIENDA [21130180],Pluviometrica,500,3.45361111,-75.15088889,Natagaima,"Rio Aipe, Rio Chenche y otros directos al Magdalena"
 22050030,COLACHE HACIENDA [22050030],Pluviometrica,384,3.79547222,-75.19563889,Coyaima,Bajo Saldana
 21135030,ANCHIQUE [21135030],Climatica Ordinaria,415,3.57383333,-75.109,Natagaima,"Rio Aipe, Rio Chenche y otros directos al Magdalena"
-4,referencia_4,NaN,0,5.408,-74.44,NaN,NaN
 22050080,PAN DE AZUCAR [22050080],Pluviometrica,1800,3.37952778,-75.50813889,Ataco,"Rio Aipe, Rio Chenche y otros directos al Magdalena"
-3,referencia_3,NaN,0,2.837,-74.44,NaN,NaN
 22050070,SAN PEDRO [22050070],Pluviometrica,1679,3.42638889,-75.48744444,Ataco,Medio Saldana
 22010070,GAITAN [22010070],Pluviometrica,1568,3.57680556,-75.74261111,Rioblanco,Alto Saldana
 22010010,HERRERA [22010010],Pluviometrica,1620,3.28783333,-75.81541667,Rioblanco,Alto Saldana
@@ -31,7 +29,6 @@ CODIGO,nombre,CAtaGORIA,altitud,latitud,longitud,MUNICIPIO,SUBZONA_HI
 22020040,CASA DE ZINC [22020040],Pluviometrica,1737,3.28580556,-75.5875,Ataco,Medio Saldana
 22070030,SANTA HELENA [22070030],Pluviometrica,2606,4.12455556,-75.49952778,Roncesvalles,Rio Cucuana
 22015020,RELATOR [22015020],Climatica Ordinaria,1160,3.52913889,-75.63141667,Rioblanco,Alto Saldana
-2,referencia_2,NaN,0,5.408,-76.154,NaN,NaN
 22060070,ORTEGA [22060070],Pluviometrica,388,3.93916667,-75.21994444,Ortega,"Rio Tetuan, R?o Ortega"
-1,referencia_1,NaN,0,2.837,-76.154,NaN,NaN
 22050090,MOLINO MURRA [22050090],Pluviometrica,324,3.92313889,-75.02119444,Saldana,Bajo Saldana
+2202500051,PLANADAS - AUT   [2202500051],Clim?tica Principal,1300,3.2058,-75.6542,Planadas,Rio Ata
