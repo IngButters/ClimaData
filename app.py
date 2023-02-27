@@ -699,10 +699,11 @@ def archivoCEDEX(df_precip_sup, df_tempSup, df_evapot, df_ubi_info, precpGet, te
 
 st.header('Bienvenido a ClimaData') 
 
-
+#image = Image.open('https://discord.com/channels/1075511092727529483/1075511093180502089/1079796983667110008')
+#st.image(image, caption='Logo')
 
 (''' 
-Gestión información climatológcia del Tolima 
+Gestión información climatológica del Tolima 
 ''')
 
 col1, col2 = st.columns(2)
@@ -717,7 +718,13 @@ with col1:
     df_precip_sup = pd.read_csv('https://raw.githubusercontent.com/IngButters/ClimaData/master/est_sup_precip_fase_2.csv')
     df_precip_sup.columns = df_precip_sup.columns.astype(str)
     df_precip_sup = df_precip_sup.round(decimals=2)
-    df_precip_sup
+    #df_precip_sup
+
+    estaciones_precip = df_precip_sup.columns.tolist()[1:]
+    estaciones_precip_f = df_ub[df_ub['CODIGO'].isin(estaciones_precip)]
+    estaciones_precip_f = estaciones_precip_f.rename(columns={'latitud':'lat','longitud':'lon'})
+    
+    st.map(estaciones_precip_f[['CODIGO','lat','lon']])
 
     option1_precip_sup = st.multiselect(
         'Seleccione la(s) estaciones a consultar',
@@ -725,30 +732,6 @@ with col1:
 
 
     st.write('Usted Seleccionó:', option1_precip_sup)
-
-    #for j in option:
-        #st.write(str(i))
-    #    st.line_chart(data=df_precip_sup, x='fecha', y=str(j), width=0, height=0, use_container_width=True)
-
-
-  #  ( Estaciones en satélite   )
-
-#    df_precip_sat = pd.read_csv('https://raw.githubusercontent.com/IngButters/ClimaData/master/puntos_sat_precip_F2.csv')
-#    df_precip_sat = df_precip_sat.round(decimals=2)
-#    df_precip_sat
-
-#    option2 = st.multiselect(
-#        'Seleccione la(s) estaciones a consultar',
-#        ['Ninguno'] + df_precip_sat.columns.tolist()[1:])
-
-#    if 'Ninguno' not in option2:
-#        st.write('Usted Seleccionó:', option2)
-
-    #for j in option:
-        #st.write(str(i))
-    #    st.line_chart(data=df_precip_sup, x='fecha', y=str(j), width=0, height=0, use_container_width=True)
-
-
 
 
 
@@ -763,7 +746,19 @@ with col2:
     df_temp_sup = pd.read_csv('https://raw.githubusercontent.com/IngButters/ClimaData/master/est_sup_temp_fase_2.csv')
     df_temp_sup = df_temp_sup.round(decimals=2)
     df_temp_sup.columns = df_temp_sup.columns.astype(str)
-    df_temp_sup
+    estaciones_temp = df_temp_sup.columns.tolist()[1:]
+    #estaciones_temp
+
+    df_ub_temp = pd.read_csv('https://raw.githubusercontent.com/IngButters/ClimaData/master/Ubicacion_puntos_temp.csv')
+    
+    #estaciones_temp_f = df_ub_temp.loc[df_ub_temp['CODIGO'].isin(estaciones_temp)]
+    df_ub_temp['CODIGO'] = df_ub_temp['CODIGO'].astype(str)
+    df_ub_temp = df_ub_temp.rename(columns={'latitud':'lat','longitud':'lon'})
+    #df_ub_temp
+    st.map(df_ub_temp[['CODIGO','lat','lon']])
+    
+    #df_ub
+    #df_temp_sup
 
     option3_temp_sup = st.multiselect(
         'Seleccione la(s) estaciones a consultar',
@@ -772,32 +767,9 @@ with col2:
 
     st.write('Usted Seleccionó:', option3_temp_sup)
 
-    #for i in option:
-        #st.write(str(i))
-     #   st.line_chart(data=df_temp_sup, x='fecha', y=str(i), width=0, height=0, use_container_width=True)
-
-
-    #(   ### Estaciones en satélite)
-
-#    df_temp_sat = pd.read_csv('https://raw.githubusercontent.com/IngButters/ClimaData/master/puntos_temp_F2.csv')
-#    df_temp_sat = df_temp_sat.round(decimals=2)
-#    df_temp_sat
-
-#    option4 = st.multiselect(
-#        'Seleccione la(s) estaciones a consultar',
-#        ['Ninguno'] + df_temp_sat.columns.tolist()[1:])
-    
-#    if 'Ninguno' not in option4:
-#        st.write('Usted Seleccionó:', option4)
-
-    #for i in option:
-        #st.write(str(i))
-     #   st.line_chart(data=df_temp_sup, x='fecha', y=str(i), width=0, height=0, use_container_width=True)
-
 
 st.markdown("""<hr style="height:2px;border:none;color:#333;background-color:#333;" /> """, unsafe_allow_html=True)
 
-#st.markdown(":heavy_minus_sign:" * 50)
 
 (''' 
 --- 
@@ -7031,36 +7003,6 @@ if st.button('Generar Archivo'):
                         with open("download.zip", "rb") as f:
                             bytes = f.read()
                             st.download_button(label="Descargar Archivos", data=bytes, file_name="Ensamble_todoscedex.zip", mime="application/zip")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
