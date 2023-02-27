@@ -699,8 +699,7 @@ def archivoCEDEX(df_precip_sup, df_tempSup, df_evapot, df_ubi_info, precpGet, te
 
 st.header('Bienvenido a ClimaData') 
 
-#image = Image.open('https://discord.com/channels/1075511092727529483/1075511093180502089/1079796983667110008')
-#st.image(image, caption='Logo')
+
 
 (''' 
 Gestión información climatológcia del Tolima 
